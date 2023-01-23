@@ -13,6 +13,71 @@ $very-dark-blue: hsl(234, 12%, 34%);
 $grayish-blue: hsl(229, 6%, 66%);
 $very-light-gray: hsl(0, 0%, 98%);
 
+
+/* COMMON */
 html, body {
-    min-width: 100vh;
+    min-width: 100vw;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    height: 100vh;
+    background-color: $very-light-gray;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-size: 15px;
+}
+
+/* MAIN */
+main {
+    width: 375px;
+
+    /* PRODUCT SECTION */
+    .product-section {
+        width: 85%;
+        height: 160px;
+        margin-bottom: 70px;
+
+        /* PRODUCT HEADING */
+        h1 {
+            color: $very-dark-blue;
+            margin: 6px 0px;
+            font-size: 1.60em;
+            text-align: center;
+
+            &:first-child {
+                font-family: 'Poppins-ExtraLight';
+            }
+
+            &:nth-child(2) {
+                font-family: 'Poppins-Regular';
+            }
+        }
+
+        /* PRODUCTS PARAGRAPH */
+        p {
+            color: $grayish-blue;
+            font-family: 'Poppins-Regular';
+            font-size: 0.90rem;
+            text-align: center;
+            word-spacing: 2px;
+        }
+    }
+
+    /* FEATURE SECTION */
+    .feature-section {
+        display: grid;
+
+        .feature-cardbox {
+            width: 250px;
+            height: 165px;
+            padding: 30px;
+            background-color: #FFFFFF;
+            border-radius: 10px;
+        }
+    }
+
 }
