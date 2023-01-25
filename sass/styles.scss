@@ -14,6 +14,17 @@ $grayish-blue: hsl(229, 6%, 66%);
 $very-light-gray: hsl(0, 0%, 98%);
 
 
+/* MIXIN */
+@mixin fontStyle($fontFamily, $fontSize, $color){
+    font-family: $fontFamily;
+    font-size: $fontSize;
+    color: $color;
+}
+
+@mixin borderTopColor($color){
+    border-top: 4px solid $color;
+}
+
 /* COMMON */
 html, body {
     min-width: 100vw;
@@ -39,29 +50,26 @@ main {
     .product-section {
         width: 85%;
         height: 160px;
-        margin-bottom: 70px;
+        margin: auto;
+        margin-bottom: 80px;
 
         /* PRODUCT HEADING */
         h1 {
-            color: $very-dark-blue;
             margin: 6px 0px;
-            font-size: 1.60em;
             text-align: center;
 
             &:first-child {
-                font-family: 'Poppins-ExtraLight';
+                @include fontStyle('Poppins-ExtraLight', 1.60em,  $very-dark-blue);
             }
 
             &:nth-child(2) {
-                font-family: 'Poppins-Regular';
+                @include fontStyle('Poppins-Regular', 1.60em,  $very-dark-blue);
             }
         }
 
         /* PRODUCTS PARAGRAPH */
         p {
-            color: $grayish-blue;
-            font-family: 'Poppins-Regular';
-            font-size: 0.90rem;
+            @include fontStyle('Poppins-Regular', 0.90rem, $grayish-blue);
             text-align: center;
             word-spacing: 2px;
         }
@@ -70,14 +78,170 @@ main {
     /* FEATURE SECTION */
     .feature-section {
         display: grid;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas: 
+        'supervisor'
+        'team-builder'
+        'karma'
+        'calculator';
 
         .feature-cardbox {
-            width: 250px;
+            margin: auto;
+            width: 260px;
             height: 165px;
-            padding: 30px;
+            padding: 24px;
             background-color: #FFFFFF;
-            border-radius: 10px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+
+            &:first-child {
+                @include borderTopColor($cyan);
+                grid-area: supervisor;
+            }
+
+            &:nth-child(2){
+                @include borderTopColor($red);
+                grid-area: team-builder;
+            }
+
+            &:nth-child(3){
+                @include borderTopColor($orange);
+                grid-area: karma;
+            }
+
+            &:last-child{
+                @include borderTopColor($blue);
+                grid-area: calculator;
+            }
+
+            header {
+
+                .feature-title {
+                    margin: 0;
+                    @include fontStyle('Poppins-SemiBold', 1.25rem, $very-dark-blue);
+                }
+    
+                .feature-description {
+                    margin: 8px 0px 26px;
+                    @include fontStyle('Poppins-Regular', 0.83rem, $grayish-blue);
+                }
+
+            }
+
+            footer {
+                img {
+                    float: right;
+                    width: 60px;
+                    height: 60px;
+                }
+            }
         }
     }
 
+}
+
+/* PORTRAIT TABLETS */
+@media only screen and (min-width: 600px){
+
+}
+
+/* LANDSCAPE TABLETS */
+@media only screen and (min-width: 768px){
+   /* MAIN */
+    main {
+        width: 1110px;
+
+        /* PRODUCT SECTION */
+        .product-section {
+            width: 45%;
+            margin-bottom: 60px;
+
+            /* PRODUCT HEADING */
+            h1 {
+                margin: 2px 0px;
+
+                &:first-child {
+                    @include fontStyle('Poppins-ExtraLight', 2.5em,  $very-dark-blue);
+                }
+
+                &:nth-child(2) {
+                    @include fontStyle('Poppins-Regular', 2.5em,  $very-dark-blue);
+                }
+            }
+        }
+
+        /* FEATURE SECTION */
+        .feature-section {
+            display: grid;
+            grid-template-rows: auto auto auto auto;
+            grid-template-areas: 
+            'supervisor'
+            'team-builder'
+            'karma'
+            'calculator';
+
+            .feature-cardbox {
+                margin: auto;
+                width: 260px;
+                height: 165px;
+                padding: 24px;
+                background-color: #FFFFFF;
+                border-radius: 5px;
+                margin-bottom: 30px;
+
+                &:first-child {
+                    @include borderTopColor($cyan);
+                    grid-area: supervisor;
+                }
+
+                &:nth-child(2){
+                    @include borderTopColor($red);
+                    grid-area: team-builder;
+                }
+
+                &:nth-child(3){
+                    @include borderTopColor($orange);
+                    grid-area: karma;
+                }
+
+                &:last-child{
+                    @include borderTopColor($blue);
+                    grid-area: calculator;
+                }
+
+                header {
+
+                    .feature-title {
+                        margin: 0;
+                        @include fontStyle('Poppins-SemiBold', 1.25rem, $very-dark-blue);
+                    }
+        
+                    .feature-description {
+                        margin: 8px 0px 26px;
+                        @include fontStyle('Poppins-Regular', 0.83rem, $grayish-blue);
+                    }
+
+                }
+
+                footer {
+                    img {
+                        float: right;
+                        width: 60px;
+                        height: 60px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* LAPTOP/DESKTOP */
+@media only screen and (min-width: 992px){
+
+}
+
+/* LARGE LAPTOP/DESKTOP */
+@media only screen and (min-width: 1200px){
+    
 }

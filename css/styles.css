@@ -2,6 +2,7 @@
 /* COLORS */
 /* PRIMARY */
 /* NEUTRAL */
+/* MIXIN */
 /* COMMON */
 html, body {
   min-width: 100vw;
@@ -28,38 +29,156 @@ main {
 main .product-section {
   width: 85%;
   height: 160px;
-  margin-bottom: 70px;
+  margin: auto;
+  margin-bottom: 80px;
   /* PRODUCT HEADING */
   /* PRODUCTS PARAGRAPH */
 }
 main .product-section h1 {
-  color: hsl(234deg, 12%, 34%);
   margin: 6px 0px;
-  font-size: 1.6em;
   text-align: center;
 }
 main .product-section h1:first-child {
   font-family: "Poppins-ExtraLight";
+  font-size: 1.6em;
+  color: hsl(234deg, 12%, 34%);
 }
 main .product-section h1:nth-child(2) {
   font-family: "Poppins-Regular";
+  font-size: 1.6em;
+  color: hsl(234deg, 12%, 34%);
 }
 main .product-section p {
-  color: hsl(229deg, 6%, 66%);
   font-family: "Poppins-Regular";
   font-size: 0.9rem;
+  color: hsl(229deg, 6%, 66%);
   text-align: center;
   word-spacing: 2px;
 }
 main .feature-section {
   display: grid;
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas: "supervisor" "team-builder" "karma" "calculator";
 }
 main .feature-section .feature-cardbox {
-  width: 250px;
+  margin: auto;
+  width: 260px;
   height: 165px;
-  padding: 30px;
+  padding: 24px;
   background-color: #FFFFFF;
-  border-radius: 10px;
+  border-radius: 5px;
+  margin-bottom: 30px;
 }
+main .feature-section .feature-cardbox:first-child {
+  border-top: 4px solid hsl(180deg, 62%, 55%);
+  grid-area: supervisor;
+}
+main .feature-section .feature-cardbox:nth-child(2) {
+  border-top: 4px solid hsl(0deg, 78%, 62%);
+  grid-area: team-builder;
+}
+main .feature-section .feature-cardbox:nth-child(3) {
+  border-top: 4px solid hsl(34deg, 97%, 64%);
+  grid-area: karma;
+}
+main .feature-section .feature-cardbox:last-child {
+  border-top: 4px solid hsl(212deg, 86%, 64%);
+  grid-area: calculator;
+}
+main .feature-section .feature-cardbox header .feature-title {
+  margin: 0;
+  font-family: "Poppins-SemiBold";
+  font-size: 1.25rem;
+  color: hsl(234deg, 12%, 34%);
+}
+main .feature-section .feature-cardbox header .feature-description {
+  margin: 8px 0px 26px;
+  font-family: "Poppins-Regular";
+  font-size: 0.83rem;
+  color: hsl(229deg, 6%, 66%);
+}
+main .feature-section .feature-cardbox footer img {
+  float: right;
+  width: 60px;
+  height: 60px;
+}
+
+/* PORTRAIT TABLETS */
+/* LANDSCAPE TABLETS */
+@media only screen and (min-width: 768px) {
+  /* MAIN */
+  main {
+    width: 1110px;
+    /* PRODUCT SECTION */
+    /* FEATURE SECTION */
+  }
+  main .product-section {
+    width: 45%;
+    margin-bottom: 60px;
+    /* PRODUCT HEADING */
+  }
+  main .product-section h1 {
+    margin: 2px 0px;
+  }
+  main .product-section h1:first-child {
+    font-family: "Poppins-ExtraLight";
+    font-size: 2.5em;
+    color: hsl(234deg, 12%, 34%);
+  }
+  main .product-section h1:nth-child(2) {
+    font-family: "Poppins-Regular";
+    font-size: 2.5em;
+    color: hsl(234deg, 12%, 34%);
+  }
+  main .feature-section {
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas: "supervisor" "team-builder" "karma" "calculator";
+  }
+  main .feature-section .feature-cardbox {
+    margin: auto;
+    width: 260px;
+    height: 165px;
+    padding: 24px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    margin-bottom: 30px;
+  }
+  main .feature-section .feature-cardbox:first-child {
+    border-top: 4px solid hsl(180deg, 62%, 55%);
+    grid-area: supervisor;
+  }
+  main .feature-section .feature-cardbox:nth-child(2) {
+    border-top: 4px solid hsl(0deg, 78%, 62%);
+    grid-area: team-builder;
+  }
+  main .feature-section .feature-cardbox:nth-child(3) {
+    border-top: 4px solid hsl(34deg, 97%, 64%);
+    grid-area: karma;
+  }
+  main .feature-section .feature-cardbox:last-child {
+    border-top: 4px solid hsl(212deg, 86%, 64%);
+    grid-area: calculator;
+  }
+  main .feature-section .feature-cardbox header .feature-title {
+    margin: 0;
+    font-family: "Poppins-SemiBold";
+    font-size: 1.25rem;
+    color: hsl(234deg, 12%, 34%);
+  }
+  main .feature-section .feature-cardbox header .feature-description {
+    margin: 8px 0px 26px;
+    font-family: "Poppins-Regular";
+    font-size: 0.83rem;
+    color: hsl(229deg, 6%, 66%);
+  }
+  main .feature-section .feature-cardbox footer img {
+    float: right;
+    width: 60px;
+    height: 60px;
+  }
+}
+/* LAPTOP/DESKTOP */
+/* LARGE LAPTOP/DESKTOP */
 
 /*# sourceMappingURL=styles.css.map */
