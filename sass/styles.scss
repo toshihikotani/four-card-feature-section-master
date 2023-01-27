@@ -78,13 +78,14 @@ main {
     /* FEATURE SECTION */
     .feature-section {
         display: grid;
-        grid-template-rows: auto auto auto auto;
+        grid-template-rows: repeat(4, auto);
         grid-template-areas: 
         'supervisor'
         'team-builder'
         'karma'
         'calculator';
 
+        /* FEATURE CARDBOX */
         .feature-cardbox {
             margin: auto;
             width: 260px;
@@ -114,8 +115,8 @@ main {
                 grid-area: calculator;
             }
 
+             /* FEATURE CARDBOX > HEADER */
             header {
-
                 .feature-title {
                     margin: 0;
                     @include fontStyle('Poppins-SemiBold', 1.25rem, $very-dark-blue);
@@ -125,9 +126,9 @@ main {
                     margin: 8px 0px 26px;
                     @include fontStyle('Poppins-Regular', 0.83rem, $grayish-blue);
                 }
-
             }
 
+             /* FEATURE CARDBOX > FOOTER */
             footer {
                 img {
                     float: right;
@@ -147,14 +148,20 @@ main {
 
 /* LANDSCAPE TABLETS */
 @media only screen and (min-width: 768px){
-   /* MAIN */
+
+}
+
+/* LAPTOP/DESKTOP */
+@media only screen and (min-width: 992px){
+
+    /* MAIN */
     main {
-        width: 1110px;
+        width: 1130px;
 
         /* PRODUCT SECTION */
         .product-section {
             width: 45%;
-            margin-bottom: 60px;
+            margin-bottom: 80px;
 
             /* PRODUCT HEADING */
             h1 {
@@ -172,72 +179,37 @@ main {
 
         /* FEATURE SECTION */
         .feature-section {
-            display: grid;
-            grid-template-rows: auto auto auto auto;
+            grid-template-rows: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             grid-template-areas: 
-            'supervisor'
-            'team-builder'
-            'karma'
-            'calculator';
+            ' . team-builder . '
+            'supervisor team-builder calculator'
+            'supervisor karma calculator'
+            ' . karma .';
 
+            /* FEATURE CARDBOX */
             .feature-cardbox {
-                margin: auto;
-                width: 260px;
-                height: 165px;
-                padding: 24px;
-                background-color: #FFFFFF;
-                border-radius: 5px;
-                margin-bottom: 30px;
+                width: 290px;
+                height: 185px;
+                padding: 30px;
 
-                &:first-child {
-                    @include borderTopColor($cyan);
-                    grid-area: supervisor;
-                }
-
-                &:nth-child(2){
-                    @include borderTopColor($red);
-                    grid-area: team-builder;
-                }
-
-                &:nth-child(3){
-                    @include borderTopColor($orange);
-                    grid-area: karma;
-                }
-
-                &:last-child{
-                    @include borderTopColor($blue);
-                    grid-area: calculator;
-                }
-
-                header {
-
-                    .feature-title {
-                        margin: 0;
-                        @include fontStyle('Poppins-SemiBold', 1.25rem, $very-dark-blue);
-                    }
-        
+                /* FEATURE CARDBOX > HEADER */
+                header {    
                     .feature-description {
-                        margin: 8px 0px 26px;
-                        @include fontStyle('Poppins-Regular', 0.83rem, $grayish-blue);
+                        margin: 8px 0px 40px;
                     }
-
                 }
 
+                /* FEATURE CARDBOX > FOOTER */
                 footer {
                     img {
-                        float: right;
-                        width: 60px;
-                        height: 60px;
+                        width: 65px;
+                        height: 65px;
                     }
                 }
             }
         }
     }
-
-}
-
-/* LAPTOP/DESKTOP */
-@media only screen and (min-width: 992px){
 
 }
 

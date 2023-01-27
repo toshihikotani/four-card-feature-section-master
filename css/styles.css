@@ -57,8 +57,9 @@ main .product-section p {
 }
 main .feature-section {
   display: grid;
-  grid-template-rows: auto auto auto auto;
+  grid-template-rows: repeat(4, auto);
   grid-template-areas: "supervisor" "team-builder" "karma" "calculator";
+  /* FEATURE CARDBOX */
 }
 main .feature-section .feature-cardbox {
   margin: auto;
@@ -68,6 +69,8 @@ main .feature-section .feature-cardbox {
   background-color: #FFFFFF;
   border-radius: 5px;
   margin-bottom: 30px;
+  /* FEATURE CARDBOX > HEADER */
+  /* FEATURE CARDBOX > FOOTER */
 }
 main .feature-section .feature-cardbox:first-child {
   border-top: 4px solid hsl(180deg, 62%, 55%);
@@ -105,16 +108,17 @@ main .feature-section .feature-cardbox footer img {
 
 /* PORTRAIT TABLETS */
 /* LANDSCAPE TABLETS */
-@media only screen and (min-width: 768px) {
+/* LAPTOP/DESKTOP */
+@media only screen and (min-width: 992px) {
   /* MAIN */
   main {
-    width: 1110px;
+    width: 1130px;
     /* PRODUCT SECTION */
     /* FEATURE SECTION */
   }
   main .product-section {
     width: 45%;
-    margin-bottom: 60px;
+    margin-bottom: 80px;
     /* PRODUCT HEADING */
   }
   main .product-section h1 {
@@ -131,54 +135,26 @@ main .feature-section .feature-cardbox footer img {
     color: hsl(234deg, 12%, 34%);
   }
   main .feature-section {
-    display: grid;
-    grid-template-rows: auto auto auto auto;
-    grid-template-areas: "supervisor" "team-builder" "karma" "calculator";
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: " . team-builder . " "supervisor team-builder calculator" "supervisor karma calculator" " . karma .";
+    /* FEATURE CARDBOX */
   }
   main .feature-section .feature-cardbox {
-    margin: auto;
-    width: 260px;
-    height: 165px;
-    padding: 24px;
-    background-color: #FFFFFF;
-    border-radius: 5px;
-    margin-bottom: 30px;
-  }
-  main .feature-section .feature-cardbox:first-child {
-    border-top: 4px solid hsl(180deg, 62%, 55%);
-    grid-area: supervisor;
-  }
-  main .feature-section .feature-cardbox:nth-child(2) {
-    border-top: 4px solid hsl(0deg, 78%, 62%);
-    grid-area: team-builder;
-  }
-  main .feature-section .feature-cardbox:nth-child(3) {
-    border-top: 4px solid hsl(34deg, 97%, 64%);
-    grid-area: karma;
-  }
-  main .feature-section .feature-cardbox:last-child {
-    border-top: 4px solid hsl(212deg, 86%, 64%);
-    grid-area: calculator;
-  }
-  main .feature-section .feature-cardbox header .feature-title {
-    margin: 0;
-    font-family: "Poppins-SemiBold";
-    font-size: 1.25rem;
-    color: hsl(234deg, 12%, 34%);
+    width: 290px;
+    height: 185px;
+    padding: 30px;
+    /* FEATURE CARDBOX > HEADER */
+    /* FEATURE CARDBOX > FOOTER */
   }
   main .feature-section .feature-cardbox header .feature-description {
-    margin: 8px 0px 26px;
-    font-family: "Poppins-Regular";
-    font-size: 0.83rem;
-    color: hsl(229deg, 6%, 66%);
+    margin: 8px 0px 40px;
   }
   main .feature-section .feature-cardbox footer img {
-    float: right;
-    width: 60px;
-    height: 60px;
+    width: 65px;
+    height: 65px;
   }
 }
-/* LAPTOP/DESKTOP */
 /* LARGE LAPTOP/DESKTOP */
 
 /*# sourceMappingURL=styles.css.map */
