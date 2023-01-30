@@ -16,14 +16,13 @@ body {
   background-color: hsl(0deg, 0%, 98%);
   display: flex;
   justify-content: center;
-  align-content: center;
+  align-items: center;
   font-size: 15px;
 }
 
 /* MAIN */
 main {
   width: 375px;
-  margin: auto;
   /* PRODUCT SECTION */
   /* FEATURE SECTION */
 }
